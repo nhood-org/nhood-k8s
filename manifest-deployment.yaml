@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nhood-service
+  namespace: nhood-prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nhood-service
+  template:
+    metadata:
+      labels:
+        app: nhood-service
+    spec:
+      containers:
+      - name: nhood-service
+        image: docker.pkg.github.com/nhood-org/repository/nhood-engine-service:v0.0.6
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+      imagePullSecrets:
+      - name: github-docker-credentials
