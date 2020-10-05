@@ -2,7 +2,6 @@
 
 set -o nounset
 set -o errexit
-set -o pipefail
 
 echo "${KUBERNETES_CLUSTER_CERTIFICATE}" | base64 --decode > cert.crt
 

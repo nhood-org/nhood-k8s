@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: Deploy
-          command: sh scripts/deploy-ci.sh
+          command: scripts/deploy-ci.sh
 
 workflows:
   version: 2
