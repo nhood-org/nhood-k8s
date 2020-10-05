@@ -35,7 +35,8 @@ sh ./scripts/deploy.sh
 
 Project is continuously integrated with `circleCi` pipeline that link to which may be found [here](https://circleci.com/gh/nhood-org/workflows/nhood-k8s)
 
-Pipeline deploys to `nhood-prod` k8s cluster. Which entry service is exposed via https://nhood-org.github.io
+Pipeline deploys nhood runtime services to `nhood-prod` k8s cluster. 
+Entry service is exposed via https://nhood-org.github.io
 
 Configuration of CI is implemented in `.circleci/config.yml`.
 
