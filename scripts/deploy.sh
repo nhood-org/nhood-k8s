@@ -1,6 +1,13 @@
 #!bin/sh
 
+set -e
+
 K8S_NAMESPACE=nhood-prod
 
-kubectl apply -f manifest-deployment.yaml -n ${K8S_NAMESPACE}
-kubectl apply -f manifest-service.yaml -n ${K8S_NAMESPACE}
+kubectl apply \
+    -f ./manifests/nhood-svc-deployment.yaml \
+    -n ${K8S_NAMESPACE}
+    
+kubectl apply \
+    -f ./manifests/nhood-svc-service.yaml \
+    -n ${K8S_NAMESPACE}

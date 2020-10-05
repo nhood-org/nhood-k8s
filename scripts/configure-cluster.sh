@@ -32,6 +32,15 @@ fi
 
 kubectl create namespace ${K8S_NAMESPACE}
 
+kubectl apply -f ./manifests/cicd-service-account.yaml \
+    -n ${K8S_NAMESPACE}
+
+kubectl apply -f ./manifests/cicd-role.yaml \
+    -n ${K8S_NAMESPACE}
+
+kubectl apply -f ./manifests/cicd-role-binding.yaml \
+    -n ${K8S_NAMESPACE}
+
 kubectl create secret docker-registry github-docker-credentials \
     --docker-server=docker.pkg.github.com \
     --docker-username=${GITHUB_PKG_USERNAME} \

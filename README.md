@@ -1,4 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CircleCI](https://circleci.com/gh/nhood-org/nhood-k8s.svg?style=shield)](https://circleci.com/gh/nhood-org/nhood-k8s)
 
 # K8S Deployment
 
@@ -32,7 +33,11 @@ sh ./scripts/deploy.sh
 
 ## CI/CD
 
-Deployment is not automated yet.
+Project is continuously integrated with `circleCi` pipeline that link to which may be found [here](https://circleci.com/gh/nhood-org/workflows/nhood-k8s)
+
+Pipeline deploys to `nhood-prod` k8s cluster. Which entry service is exposed via https://nhood-org.github.io
+
+Configuration of CI is implemented in `.circleci/config.yml`.
 
 ## License
 
