@@ -4,13 +4,13 @@ orbs:
   kube-orb: circleci/kubernetes@0.11.1
 
 jobs:
-  build:
+  deploy:
     docker:
       - image: 'cimg/base:stable'
     working_directory: ~/app
     steps:
-      - checkout
       - kube-orb/install-kubectl
+      - checkout
       - run:
           name: Deploy
           command: sh scripts/deploy-ci.sh
@@ -19,7 +19,7 @@ workflows:
   version: 2
   build-master:
     jobs:
-      - build:
+      - deploy:
           filters:
             branches:
               only: master
